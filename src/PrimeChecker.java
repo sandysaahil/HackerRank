@@ -41,31 +41,7 @@ import java.util.Set;
  * 2 3 
  * 2 3 5
 */ 
-class Prime {
-    public void checkPrime(int... inputs){
-        int index = 0;
-        StringBuilder sb = new StringBuilder();
-        for(int num : inputs) {
-            index++;
-            if(num > 1){
-                boolean isPrime = true;
-                for(int i = 2; i < num; i++) {
-                    if(num % i == 0){
-                        isPrime = false;
-                        break;
-                    }
-                }
-                if(isPrime){
-                    sb.append(num);
-                    if(index != inputs.length-1){
-                        sb.append(" ");
-                    }
-                }
-            }
-        }  
-        System.out.println(sb.toString());
-    }
-}
+
 public class PrimeChecker {
 	public static void main(String[] args) {
 		try{
@@ -103,4 +79,29 @@ public class PrimeChecker {
 			System.out.println(e);
 		}
 	}
+}
+class Prime {
+    public void checkPrime(int... inputs){
+        int index = 0;
+        StringBuilder sb = new StringBuilder();
+        for(int num : inputs) {
+            index++;
+            if(num > 1){
+                boolean isPrime = true;
+                for(int i = 2; i < num; i++) {
+                    if(num % i == 0){
+                        isPrime = false;
+                        break;
+                    }
+                }
+                if(isPrime){
+                    sb.append(num);
+                    if(index != inputs.length){
+                        sb.append(" ");
+                    }
+                }
+            }
+        }  
+        System.out.println(sb.toString());
+    }
 }
